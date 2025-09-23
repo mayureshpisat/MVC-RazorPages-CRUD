@@ -19,6 +19,7 @@ namespace EA_MVC_Practice.Database
             modelBuilder.Entity<Product>().Property(p => p.Name).HasMaxLength(100).IsRequired();
             modelBuilder.Entity<Product>().Property(p => p.Description).HasMaxLength(100).IsRequired();
 
+            base.OnModelCreating(modelBuilder);
         }
 
     }
