@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model EA_MVC_Practice.DTO.ProductDTO
+
+@{
+
+    <form class="form-floating" method="post" asp-controller="Product" asp-action="Update">
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" asp-for="Id" class="form-control">
+
+        <input type="text" asp-for = "Name" class="form-control" placeholder="Name">
+        <span asp-validation-for="Name"></span>
+
+        <input type="text" asp-for = "Description" class="form-control" placeholder="Description" >
+        <span asp-validation-for="Description"></span>
+
+        <button class="btn btn-primary" type="submit">Save</button>
+
+    </form>
+
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
