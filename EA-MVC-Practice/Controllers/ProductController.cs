@@ -16,7 +16,6 @@ namespace EA_MVC_Practice.Controllers
             _context = context;
         }
 
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             ViewData["Count"] = 0;

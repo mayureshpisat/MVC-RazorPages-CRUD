@@ -30,7 +30,7 @@ namespace EA_MVC_Practice.Controllers
             var result = await _accountService.RegisterUserAsync(model);
 
             if (result.Succeeded)
-                return RedirectToAction("Index", "Product");
+                return RedirectToAction("Index", "Home");
 
             return View();
 
@@ -56,7 +56,7 @@ namespace EA_MVC_Practice.Controllers
             try
             {
                 await _accountService.LoginAsync(model);
-                return RedirectToAction("Index", "Product");
+                return RedirectToAction("Index", "Home");
             }catch(Exception ex)
             {
                 ViewData["Error"] = ex.Message;

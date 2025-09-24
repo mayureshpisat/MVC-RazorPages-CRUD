@@ -25,8 +25,12 @@
                     <td>@item.Name</td>
                     <td>@item.Description</td>
                     <td>
-                        <p><a asp-action = "Delete" asp-route-id = "@item.Id" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Delete</a></p>
-                        <p><a asp-action="Edit"  asp-route-id="@item.Id"  class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a></p>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <p><a asp-action="Delete" asp-route-id="@item.Id" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Delete</a></p>
+                            <p><a asp-action="Edit" asp-route-id="@item.Id" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a></p>
+                        }
+                        
                     </td>
                 </tr>
                 count++;
