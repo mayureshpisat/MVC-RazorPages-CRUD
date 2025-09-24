@@ -1,6 +1,7 @@
 ﻿using EA_MVC_Practice.Database;
 using EA_MVC_Practice.DTO;
 using EA_MVC_Practice.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,7 @@ namespace EA_MVC_Practice.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             ViewData["Count"] = 0;

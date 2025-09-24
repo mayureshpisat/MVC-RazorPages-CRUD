@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace EA_MVC_Practice.Database
 {
-    public class MyDbContext : IdentityDbContext<IdentityUser>
+    public class MyDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     { 
 
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
