@@ -56,7 +56,7 @@ namespace EA_MVC_Practice.Controllers
             try
             {
                 await _accountService.LoginAsync(model);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Product");
             }catch(Exception ex)
             {
                 ViewData["Error"] = ex.Message;
@@ -70,7 +70,7 @@ namespace EA_MVC_Practice.Controllers
         public async Task<IActionResult> Logout()
         {
             await _accountService.LogoutAsync();
-            return View("Login");
+            return RedirectToAction("Login");
         }
 
         [HttpGet]
